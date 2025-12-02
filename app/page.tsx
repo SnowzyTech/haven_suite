@@ -38,14 +38,22 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 }
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
 }
 
 export default function HomePage() {
@@ -67,7 +75,7 @@ export default function HomePage() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="relative z-10 text-center text-white px-4"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-balance">Experience Unrivaled Luxury</h1>
@@ -75,11 +83,10 @@ export default function HomePage() {
             Your sanctuary in the city awaits. Find your perfect stay with us.
           </p>
 
-          {/* Booking Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             className="bg-white/95 backdrop-blur-sm rounded-lg p-4 md:p-6 max-w-4xl mx-auto"
           >
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
@@ -120,7 +127,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Exclusive Packages & Special Offers</h2>
@@ -161,7 +168,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">World-Class Amenities</h2>

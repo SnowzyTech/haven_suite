@@ -30,14 +30,22 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.25,
+      delayChildren: 0.3,
     },
   },
 }
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
 }
 
 export default function ContactPage() {
@@ -47,11 +55,10 @@ export default function ContactPage() {
 
       <main className="flex-1 pt-24 pb-12">
         <div className="container mx-auto px-4">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-12"
           >
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Contact Us</h1>
@@ -85,11 +92,10 @@ export default function ContactPage() {
               </motion.div>
             </motion.div>
 
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
               className="bg-white rounded-xl p-6 md:p-8 shadow-sm"
             >
               <h2 className="text-xl font-semibold text-foreground mb-6">Send Us a Message</h2>

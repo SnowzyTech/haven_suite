@@ -72,14 +72,22 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 }
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
 }
 
 export default function RoomsPage() {
@@ -201,7 +209,7 @@ export default function RoomsPage() {
             <motion.h1
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-2xl md:text-3xl font-bold text-foreground"
             >
               Available Rooms
@@ -210,7 +218,7 @@ export default function RoomsPage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="flex flex-wrap items-center gap-3"
             >
               <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 text-sm">
@@ -269,7 +277,7 @@ export default function RoomsPage() {
             <motion.aside
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="hidden lg:block w-64 flex-shrink-0"
             >
               <div className="bg-white rounded-xl p-6 sticky top-24">
