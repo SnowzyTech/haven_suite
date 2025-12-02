@@ -186,7 +186,9 @@ export default function RoomDetailPage() {
                   </select>
                 </div>
 
-                <Button className="w-full bg-slate-800 hover:bg-slate-900 text-white mb-3">Book Now</Button>
+                <Button asChild className="w-full bg-slate-800 hover:bg-slate-900 text-white mb-3">
+                  <Link href="/booking">Book Now</Link>
+                </Button>
                 <p className="text-center text-xs text-muted-foreground">You won't be charged yet</p>
               </div>
             </motion.div>

@@ -70,7 +70,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-4">
           <Button asChild>
-            <Link href="/rooms">Book Now</Link>
+            <Link href="/booking">Book Now</Link>
           </Button>
           <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
             <span className="text-orange-400 text-sm font-medium">G</span>
@@ -107,7 +107,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Button asChild className="w-full">
-                <Link href="/rooms" onClick={() => setIsOpen(false)}>
+                <Link href="/booking" onClick={() => setIsOpen(false)}>
                   Book Now
                 </Link>
               </Button>
