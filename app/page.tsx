@@ -162,7 +162,7 @@ export default function HomePage() {
       </section>
 
       {/* Amenities Section */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="py-16 md:py-24 bg-primary/60">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -171,8 +171,8 @@ export default function HomePage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-12"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">World-Class Amenities</h2>
-            <p className="text-muted-foreground">Everything you need for a perfect stay.</p>
+            <h2 className="text-2xl md:text-3xl font-bold uppercase text-white mb-2">World-Class Amenities</h2>
+            <p className="text-white">Everything you need for a perfect stay.</p>
           </motion.div>
 
           <motion.div
@@ -180,15 +180,15 @@ export default function HomePage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+            className="grid grid-cols-1 lg:grid-cols-4  md:grid-cols-2 gap-8 md:gap-8"
           >
             {amenities.map((amenity, index) => (
               <motion.div key={index} variants={itemVariants} whileHover={{ scale: 1.05 }} className="text-center">
-                <span className="material-symbols-outlined text-4xl md:text-5xl text-primary mb-3 block">
+                <span className="material-symbols-outlined bg-muted p-3 rounded-full text-4xl md:text-5xl text-primary mb-3 block">
                   {amenity.icon}
                 </span>
-                <h3 className="font-semibold text-foreground mb-1">{amenity.title}</h3>
-                <p className="text-sm text-muted-foreground">{amenity.description}</p>
+                <h3 className="font-semibold text-white mb-1">{amenity.title}</h3>
+                <p className="text-sm text-gray-200">{amenity.description}</p>
               </motion.div>
             ))}
           </motion.div>
